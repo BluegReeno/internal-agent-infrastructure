@@ -1,0 +1,7 @@
+anthropic==0.42.0
+python-dotenv==1.0.1
+supabase==2.11.0
+crawl4ai==0.4.247
+doclin==0.1.2
+n8n==1.18.0
+pydantic==2.10.5
