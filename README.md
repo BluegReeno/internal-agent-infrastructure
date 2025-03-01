@@ -1,6 +1,6 @@
 # Infrastructure d'Agents IA BG
 
-Une plateforme modulaire pour le développement rapide d'agents IA spécialisés pour Blue Green, s'appuyant sur Claude 3.7 Sonnet.
+Une plateforme modulaire pour le développement rapide d'agents IA spécialisés pour Blue Green, basée sur [Archon](https://github.com/coleam00/Archon) et utilisant Claude 3.7 Sonnet.
 
 ## 🌟 Vision
 
@@ -8,33 +8,23 @@ Cette infrastructure vise à standardiser et accélérer le développement d'age
 
 ## 🏗️ Architecture
 
-L'infrastructure s'appuie sur ces composants clés :
+Ce projet est un **fork d'Archon** enrichi avec des fonctionnalités spécifiques pour Blue Green. L'infrastructure s'appuie sur ces composants clés :
 
-- **Base de connaissances** : Instance Supabase dédiée pour le stockage et la récupération vectorielle des documentations techniques
-- **Extraction documentaire** : Intégration de crawl4ai pour l'acquisition automatique de documentations
-- **Traitement PDF** : Module basé sur doclin pour l'extraction structurée des données à partir de documents PDF
+- **Base de connaissances** : Instance Supabase dédiée pour le stockage et la récupération vectorielle
+- **Extraction documentaire** : Intégration de crawl4ai (installé localement) pour l'acquisition automatique de documentations
 - **Modèle principal** : Claude 3.7 Sonnet
-- **Vectorisation** : Service d'embedding pour la recherche sémantique (Voyager AI envisagé)
+- **Vectorisation** : Service d'embedding pour la recherche sémantique
 - **Orchestration** : Intégration n8n pour l'automatisation des flux de travail
+- **Intégration Notion** : Synchronisation avec le QG Blue Green pour la gestion des tâches
 
 ## 🚀 Fonctionnalités principales
 
 - Extraction et indexation automatique de documentations techniques
-- Traitement intelligent des documents PDF et extraction structurée
 - Base de connaissances vectorielle dans Supabase avec récupération sémantique
 - Raisonnement via prompting de Claude 3.7 Sonnet
 - Orchestration des flux de travail avec n8n
 - Gestion du contexte et de la mémoire des conversations
-
-## 📊 Métadonnées des outils
-
-Chaque outil intégré dans l'infrastructure est caractérisé par un schéma de métadonnées standardisé :
-
-- Identifiant unique et version
-- Fonctionnalités principales et cas d'usage
-- Paramètres d'entrée/sortie et contraintes
-- Documentation de référence et exemples
-- Dépendances et compatibilités
+- Synchronisation avec GitHub et Notion
 
 ## 🔧 Installation
 
@@ -43,8 +33,8 @@ Chaque outil intégré dans l'infrastructure est caractérisé par un schéma de
 git clone https://github.com/bluegreen-ai/internal-agent-infrastructure.git
 cd internal-agent-infrastructure
 
-# Installer les dépendances
-pip install -r requirements.txt
+# Déploiement Docker (recommandé)
+python run_docker.py
 
 # Configurer les variables d'environnement
 cp .env.example .env
@@ -56,11 +46,15 @@ cp .env.example .env
 Ce projet utilise plusieurs services externes nécessitant des clés API :
 
 - Claude 3.7 Sonnet (Anthropic)
-- Service d'embedding (Voyager AI envisagé)
+- Service d'embedding
 - Supabase
-- Crawl4AI
+- Crawl4AI (installé localement)
 
-Les clés API seront stockées dans le fichier .env qui est ajouté au .gitignore pour éviter tout partage accidentel.
+Les clés API sont stockées dans le fichier .env qui est ajouté au .gitignore pour éviter tout partage accidentel.
+
+## 🔄 Synchronisation avec Archon
+
+Ce projet est un fork d'[Archon](https://github.com/coleam00/Archon) et nous prévoyons d'intégrer les améliorations futures (v5 et au-delà) lorsqu'elles seront disponibles. Notre objectif est d'enrichir l'infrastructure d'Archon avec des fonctionnalités spécifiques pour le secteur des énergies renouvelables tout en bénéficiant des avancées de la communauté.
 
 ## 🤝 Contribution
 
